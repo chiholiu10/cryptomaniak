@@ -22,5 +22,23 @@ export const sliderData = [
         rating: 5,
         content: "So far for a begginer I'm enjoying this, got a lot to learn but it's a good platform with useful tutorials to assist you along.. I would recommend cryptohopper.",
         backgroundImage: "images/slidercard-bg.png"
+    },
+    {
+        name: "Chris Zahm",
+        rating: 4,
+        content: "The Cryptohopper experience is simply amazing. Great instructions to help you on your way and s great community. The website is beautifully designed with full functionality. The app on the other...",
+        backgroundImage: "images/slidercard-bg.png"
+    },
+    {
+        name: "Chris Zahm",
+        rating: 4,
+        content: "The Cryptohopper experience is simply amazing. Great instructions to help you on your way and s great community. The website is beautifully designed with full functionality. The app on the other...",
+        backgroundImage: "images/slidercard-bg.png"
+    },
+    {
+        name: "Chris Zahm",
+        rating: 4,
+        content: "The Cryptohopper experience is simply amazing. Great instructions to help you on your way and s great community. The website is beautifully designed with full functionality. The app on the other...",
+        backgroundImage: "images/slidercard-bg.png"
     }
 ];

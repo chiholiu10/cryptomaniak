@@ -1,9 +1,13 @@
 import styled, { css } from "styled-components";
 import { breakpoint } from "../../styles/BreakPoint";
+import theme from "../../styles/Theme";
 
 export const Accordion = styled.section`
   font-size: 20px;
   font-weight: 500;
+  max-width: 746px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const AccordionCard = styled.div`
@@ -42,8 +46,7 @@ export const Block = `
   height: auto;
   position: relative;
   z-index: 1;
-  border: 1px solid red;
-
+  padding: 10px 0;
 `;
 
 export const None = `
@@ -61,6 +64,7 @@ export const AccordionContent = styled.div<{toggle: boolean}>`
   font-style: normal;
   font-size: 18px;
   line-height: 25px;
+  color: ${theme.colors.lightText};
   display: ${(p: any) => p.toggle ? Block: None};
 `;
 
