@@ -70,7 +70,7 @@ export const SliderComponent: FC = () => {
               count={5}
               value={item.rating}
               size={20}
-              color2={"#ffd700"}
+              color1={"#ffd700"}
               edit={false}
             />
             <SliderCardContent>{item.content}</SliderCardContent>

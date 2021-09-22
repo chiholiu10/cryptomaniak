@@ -5,7 +5,7 @@ import { TableContent } from "../../data/table";
 
 export const TableData: FC = () => {
   const columns = useMemo(() => TableHeaders, []);
-  const data = useMemo(() => TableContent, []);
+  const data = useMemo(() => TableContent, [TableContent]);
 
   return (
     <div>

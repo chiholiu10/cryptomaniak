@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
     white: "#FFFFFF",
     defaultText: "#0D0C43",
     darkText: "#0D0C43",
+    lightText:"#7A7998",
     mediumBlue: "#00B2C8",
     ultraLightBlue: "#F7FDFD",
     lightBlue: "#D5F4F7"
