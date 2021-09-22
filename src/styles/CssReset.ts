@@ -12,8 +12,7 @@ export const CSSreset = createGlobalStyle(
       width: 100vw;
       overflow-x: hidden;
       font-family: ${theme.fonts.body};
-      background-color: ${theme.colors.black};
-      color: ${theme.colors.white};
+      color: ${theme.colors.black};
     }
     main {
       display: block;

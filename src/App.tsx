@@ -1,5 +1,15 @@
 import { FC } from "react";
+import { AppComponent } from "./App.styles";
+import { AccordionComponent } from "./components/Accordion/Accordion";
+import { PaymentMethods } from "./components/PaymentMethods/PaymentMethods";
+import { SliderComponent } from "./components/Slider/Slider";
 
 export const App: FC = () => {
-  return <div className="App">Hello world</div>;
+  return (
+    <AppComponent>
+      <SliderComponent />
+      <PaymentMethods />
+      <AccordionComponent />
+    </AppComponent>
+  );
 };
