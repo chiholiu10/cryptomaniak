@@ -40,6 +40,14 @@ export const Table: FC<TableProps> = ({ columns, data }) => {
         ))}
       </select>
 
+      <select value={value} onChange={handleChange}>
+        {allColumns.map((column) => (
+          <option value={column.id} {...column.getToggleHiddenProps()}>
+            {column.id}
+          </option>
+        ))}
+      </select>
+
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
