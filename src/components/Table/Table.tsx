@@ -24,15 +24,14 @@ export const Table: FC<TableProps> = ({ columns, data }) => {
     data,
     columns,
   });
-  const [value, setValue] = useState("");
-  const handleChange = (e: any) => {
-    console.log(e);
-    setValue(e.target.value);
-  };
+  const [valueOne, setValueOne] = useState("");
+  const [valueTwo, setValueTwo] = useState("");
+  const handleChangeOne = (e: any) => setValueOne(e.target.value);
+  const handleChangeTwo = (e: any) => setValueTwo(e.target.value);
 
   return (
     <>
-      <select value={value} onChange={handleChange}>
+      <select value={valueOne} onChange={handleChangeOne}>
         {allColumns.map((column) => (
           <option value={column.id} {...column.getToggleHiddenProps()}>
             {column.id}
@@ -40,7 +39,7 @@ export const Table: FC<TableProps> = ({ columns, data }) => {
         ))}
       </select>
 
-      <select value={value} onChange={handleChange}>
+      <select value={valueTwo} onChange={handleChangeTwo}>
         {allColumns.map((column) => (
           <option value={column.id} {...column.getToggleHiddenProps()}>
             {column.id}
