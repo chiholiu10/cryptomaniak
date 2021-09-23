@@ -1,25 +1,45 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useTable } from "react-table";
 
 interface Column {
   Header: string;
   accessor: string;
+  id: Function | string | number;
 }
 
 interface TableProps {
-  columns: Array<Column>;
+  columns: Array<any>;
   data: Array<any>;
 }
 
 export const Table: FC<TableProps> = ({ columns, data }) => {
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({
-      data,
-      columns,
-    });
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    allColumns,
+  } = useTable({
+    data,
+    columns,
+  });
+  const [value, setValue] = useState("");
+  const handleChange = (e: any) => {
+    console.log(e);
+    setValue(e.target.value);
+  };
 
   return (
     <>
+      <select value={value} onChange={handleChange}>
+        {allColumns.map((column) => (
+          <option value={column.id} {...column.getToggleHiddenProps()}>
+            {column.id}
+          </option>
+        ))}
+      </select>
+
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (

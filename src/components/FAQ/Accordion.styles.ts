@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { breakpoint } from "../../styles/BreakPoint";
 import theme from "../../styles/Theme";
 
@@ -8,6 +8,7 @@ export const Accordion = styled.section`
   max-width: 746px;
   margin-left: auto;
   margin-right: auto;
+  padding: 50px 0;
 `;
 
 export const AccordionCard = styled.div`

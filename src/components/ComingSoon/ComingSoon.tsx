@@ -9,6 +9,7 @@ import {
   ComingSoonSubtitle,
   ComingSoonText,
   ComingSoonTextBlock,
+  CompongSoonInnerContainer,
   EllipseImage,
   HeaderBreak,
   IphoneImage,
@@ -16,28 +17,32 @@ import {
 
 export const ComingSoon: FC = () => (
   <ComingSoonContainer>
-    <ComingSoonColumn>
-      <Header>
-        Start trading with <HeaderBreak />
-        Cryptohopper for free!
-      </Header>
-      <ComingSoonSubtitle>Free to use - no credit required</ComingSoonSubtitle>
-      <ComingSoonTextBlock>
-        <ComingSoonSpan>
-          <ComingSoonArrowIcon src="images/arrow_btn.png" />
-        </ComingSoonSpan>
-        <ComingSoonText>Let's get started</ComingSoonText>
-      </ComingSoonTextBlock>
-    </ComingSoonColumn>
-    <ComingSoonColumn>
-      <ComingSoonImageBlock>
-        <EllipseImage>
-          <img src="images/ellipse.png" />
-        </EllipseImage>
-        <IphoneImage>
-          <img src="images/iphone_app.png" />
-        </IphoneImage>
-      </ComingSoonImageBlock>
-    </ComingSoonColumn>
+    <CompongSoonInnerContainer>
+      <ComingSoonColumn>
+        <Header>
+          Start trading with <HeaderBreak />
+          Cryptohopper for free!
+        </Header>
+        <ComingSoonSubtitle>
+          Free to use - no credit required
+        </ComingSoonSubtitle>
+        <ComingSoonTextBlock>
+          <ComingSoonSpan>
+            <ComingSoonArrowIcon src="images/arrow_btn.png" />
+          </ComingSoonSpan>
+          <ComingSoonText>Let's get started</ComingSoonText>
+        </ComingSoonTextBlock>
+      </ComingSoonColumn>
+      <ComingSoonColumn>
+        <ComingSoonImageBlock>
+          <EllipseImage>
+            <img src="images/ellipse.png" />
+          </EllipseImage>
+          <IphoneImage>
+            <img src="images/iphone_app.png" />
+          </IphoneImage>
+        </ComingSoonImageBlock>
+      </ComingSoonColumn>
+    </CompongSoonInnerContainer>
   </ComingSoonContainer>
 );

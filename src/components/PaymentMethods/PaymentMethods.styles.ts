@@ -5,6 +5,7 @@ export const PaymentMethodsContainer = styled.section`
 `;
 
 export const PaymentBlock = styled.div`
+    padding: 20px 0;
     ${breakpoint.xl`
         max-width: 1300px;
         margin-left: auto;
@@ -14,9 +15,8 @@ export const PaymentBlock = styled.div`
 
 export const PaymentIconBlock = styled.div`
     border-radius: 20px;
-    height: 78px;
+    height: 82px;
     display: flex;
-    border: 1px solid red;
     align-items: center;
     justify-content: center;
     flex: 0 49%;

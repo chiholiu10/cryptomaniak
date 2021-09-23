@@ -9,7 +9,6 @@ export const Header = styled.h2`
     line-height: 38px;
     padding: 30px 0 20px;
     ${breakpoint.md`
-        padding: 50px 0 25px;
+        padding: 100px 0 45px;
     `}
-
 `;

@@ -1,55 +1,55 @@
 export const TableContent = [
     {
-        "available on all exchanges": "Live trading terminal",
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Portfolio Management",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Manual trading",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Syncing positions",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Reserve positions",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Personal stats",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Global stats",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,
         "hero": true
     },
-    { 
-        "available on all exchanges": "Strategy builder",
+    {
+        "feature": "Live trading terminal",
         "pioneer": true,
         "explorer": true,
         "adventurer": true,

@@ -27,7 +27,7 @@ export const ComingSoonContainer = styled.section`
 `;
 
 export const ComingSoonColumn = styled.div`
-
+    
 `;
 
 export const HeaderBreak = styled.br``;
@@ -53,6 +53,9 @@ export const ComingSoonImageBlock = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    ${breakpoint.md`
+        display: none;
+    `}
 `;
 
 export const EllipseImage = styled.div`
@@ -63,6 +66,14 @@ export const EllipseImage = styled.div`
 export const IphoneImage = styled.div`
     position: absolute;
     bottom: 0;
+`;
+
+export const CompongSoonInnerContainer = styled.div`
+    ${breakpoint.lg`
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    `}
 `;
 
 export const ComingSoonTextBlock = styled.div`

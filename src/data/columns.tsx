@@ -1,22 +1,27 @@
 export const TableHeaders = [
   {
     Header: "Features",
+    id: "feature",
     accessor: "feature",
   },
   {
     Header: "Pioneer",
-    accessor: "pioneer",
+    id: "pioneer",
+    accessor: (d: any) => d.pioneer.toString(),
   },
   {
     Header: "Explorer",
-    accessor: "explorer",
+    id: "explorer",
+    accessor: (d: any) => d.explorer.toString(),
   },
   {
     Header: "Adventurer",
-    accessor: "adventurer",
+    id: "adventurer",
+    accessor: (d: any) => d.adventurer.toString(),
   },
   {
     Header: "Hero",
-    accessor: "hero",
+    id: "hero",
+    accessor: (d: any) => d.hero.toString(),
   },
 ];
