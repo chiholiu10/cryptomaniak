@@ -13,13 +13,6 @@ import {
 import { accordionText } from "../../data/accordionText";
 import { Header } from "../../styles/GeneralStyles.styles";
 
-export interface AccordionBlock {
-  title: string;
-  content: string;
-  image: string;
-  alt: string;
-}
-
 export const AccordionComponent: FC = () => {
   const [isOpen, setOpen] = useState<boolean | number>(0);
 

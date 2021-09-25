@@ -28,7 +28,7 @@ export const ComingSoon: FC = () => (
         </ComingSoonSubtitle>
         <ComingSoonTextBlock>
           <ComingSoonSpan>
-            <ComingSoonArrowIcon src="images/arrow_btn.png" />
+            <ComingSoonArrowIcon src="images/arrow_btn.png" alt="arrow-icon"/>
           </ComingSoonSpan>
           <ComingSoonText>Let's get started</ComingSoonText>
         </ComingSoonTextBlock>
@@ -36,10 +36,10 @@ export const ComingSoon: FC = () => (
       <ComingSoonColumn>
         <ComingSoonImageBlock>
           <EllipseImage>
-            <img src="images/ellipse.png" />
+            <img src="images/ellipse.png" alt="ellipse"/>
           </EllipseImage>
           <IphoneImage>
-            <img src="images/iphone_app.png" />
+            <img src="images/iphone_app.png" alt="iphone-app"/>
           </IphoneImage>
         </ComingSoonImageBlock>
       </ComingSoonColumn>

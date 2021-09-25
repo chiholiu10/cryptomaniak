@@ -11,7 +11,8 @@ const theme: DefaultTheme = {
     mediumBlue: "#00B2C8",
     lightGrey: "#F8F7FC",
     ultraLightBlue: "#F7FDFD",
-    lightBlue: "#D5F4F7"
+    lightBlue: "#D5F4F7",
+    borderColor: "#DFEAFB"
   },
   // typography
   fontWeights: {

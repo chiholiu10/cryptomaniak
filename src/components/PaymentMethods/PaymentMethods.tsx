@@ -15,7 +15,7 @@ type IconImages = {
 export const PaymentMethods: FC = () => {
   const icons = paymentIcons.map((icons: IconImages, index: number) => (
     <PaymentIconBlock>
-      <img src={icons.image} />
+      <img src={icons.image} alt={icons.image} />
     </PaymentIconBlock>
   ));
   return (

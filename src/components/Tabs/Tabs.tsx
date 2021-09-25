@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Tab } from "../../data/tab";
 import { Header } from "../../styles/GeneralStyles.styles";
-import { TabAnchor, TabSection, TabSelector, TabContent, TabBlock, AllTabsContainer, TabSpan, TabContentBlock } from "./Tabs.styles";
+import { TabAnchor, TabSection, TabSelector, TabContent, TabBlock, AllTabsContainer, TabSpan } from "./Tabs.styles";
 
 export const Tabs: FC = () => {
   const [checkTab, setCheckTab] = useState<number>(0);
