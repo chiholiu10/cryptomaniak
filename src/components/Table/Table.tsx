@@ -1,11 +1,11 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useTable } from "react-table";
 
-interface Column {
-  Header: string;
-  accessor: string;
-  id: Function | string | number;
-}
+// interface Column {
+//   Header: string;
+//   accessor: string;
+//   id: Function | string | number;
+// }
 
 interface TableProps {
   columns: Array<any>;
@@ -22,31 +22,19 @@ export const Table: FC<TableProps> = ({ columns, data }) => {
     allColumns,
   } = useTable({
     data,
-    columns,
+    columns
   });
-  const [valueOne, setValueOne] = useState("");
-  const [valueTwo, setValueTwo] = useState("");
-  const handleChangeOne = (e: any) => setValueOne(e.target.value);
-  const handleChangeTwo = (e: any) => setValueTwo(e.target.value);
 
   return (
     <>
-      <select value={valueOne} onChange={handleChangeOne}>
-        {allColumns.map((column) => (
-          <option value={column.id} {...column.getToggleHiddenProps()}>
+      {allColumns.map((column, index) => (
+        <div key={index}>
+          <label>
+            <input type="radio" {...column.getToggleHiddenProps()} />
             {column.id}
-          </option>
-        ))}
-      </select>
-
-      <select value={valueTwo} onChange={handleChangeTwo}>
-        {allColumns.map((column) => (
-          <option value={column.id} {...column.getToggleHiddenProps()}>
-            {column.id}
-          </option>
-        ))}
-      </select>
-
+          </label>
+        </div>
+      ))}
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -57,10 +45,11 @@ export const Table: FC<TableProps> = ({ columns, data }) => {
             </tr>
           ))}
         </thead>
+
         <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
-
+            console.log(row);
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => (

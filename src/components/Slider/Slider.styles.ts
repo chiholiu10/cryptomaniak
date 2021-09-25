@@ -11,9 +11,6 @@ export const SliderCard = styled.div`
     z-index: 1;
     ${breakpoint.md`
         min-height: 300px;
-    `}
-    ${breakpoint.md`
-        min-height: 300px;
         padding: 25px;
     `}
     ${breakpoint.lg`

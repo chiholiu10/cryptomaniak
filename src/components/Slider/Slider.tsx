@@ -14,7 +14,7 @@ import {
 
 export const SliderComponent: FC = () => {
   const settings = {
-    speed: 200,
+    speed: 400,
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 4,

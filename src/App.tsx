@@ -5,12 +5,12 @@ import { ComingSoon } from "./components/ComingSoon/ComingSoon";
 import { TableData } from "./components/TableData/TableData";
 import { PaymentMethods } from "./components/PaymentMethods/PaymentMethods";
 import { SliderComponent } from "./components/Slider/Slider";
-import { TabMenu } from "./components/TabMenu/TabMenu";
+import { Tabs } from "./components/Tabs/Tabs";
 
 export const App: FC = () => {
   return (
     <AppComponent>
-      <TabMenu />
+      <Tabs />
       <SliderComponent />
       <TableData />
       <PaymentMethods />
