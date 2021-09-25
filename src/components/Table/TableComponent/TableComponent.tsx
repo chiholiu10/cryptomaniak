@@ -29,10 +29,17 @@ export const TableComponent: FC<TableComponentProps> = ({ columns}) => {
     }
 
     useOutsideAlerter(wrapperRef)
+
+    const showColumn = () => {
+        let newArray: any = [];
+
+        console.log(newArray)
+    }
         
     const dropdownFilter = (selectedColumn: string) => {
-        setColumnShow(selectedColumn)
-        setOpenDropdown(false)
+        setColumnShow(selectedColumn);
+        setOpenDropdown(false);
+        showColumn()
     }
 
     const toggleDropdownOpen = () => setOpenDropdown(!openDropdown);
@@ -41,9 +48,24 @@ export const TableComponent: FC<TableComponentProps> = ({ columns}) => {
         <div>
             <TableFilter>
                 <TableFilterBlock ref={wrapperRef}>
-                    <TableFilterInput 
-                    onClick={() => toggleDropdownOpen()}
-                    >{columnShow.length > 0 ? columnShow : "Select"}</TableFilterInput>
+                    <TableFilterInput onClick={() => toggleDropdownOpen()}>
+                    {columnShow.length > 0 ? columnShow : "Select"}</TableFilterInput>
+                    <TableFilterDropdown toggleDropdown={openDropdown}>
+                        {columns.slice(1).map((item, index) => (
+                            <TableDropdownList key={index}>
+                                <div onClick={() => dropdownFilter(item.id)}>
+                                    {item.id}
+                                </div>
+                            </TableDropdownList>
+                        ))}
+                    </TableFilterDropdown>
+                </TableFilterBlock>
+            </TableFilter>
+
+            <TableFilter>
+                <TableFilterBlock ref={wrapperRef}>
+                    <TableFilterInput onClick={() => toggleDropdownOpen()}>
+                    {columnShow.length > 0 ? columnShow : "Select"}</TableFilterInput>
                     <TableFilterDropdown toggleDropdown={openDropdown}>
                         {columns.slice(1).map((item, index) => (
                             <TableDropdownList key={index}>

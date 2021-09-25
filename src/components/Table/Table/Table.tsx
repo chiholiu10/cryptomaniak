@@ -29,14 +29,19 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
     columns,
     initialState: {
       hiddenColumns: columns.filter(column => {
-        console.log(String(column))
         if(column.id !== String(hiddenColumns)) return column;
-    })
+      })
     }
   });
   
   useEffect(() => {
-    setHiddenColumns(hiddenColumns);
+    let newArray: any = [];
+    columns.slice(1).filter(column => {
+      if(column.id !== String(hiddenColumns) && (hiddenColumns.length > 0)) {
+        newArray.push(column.id);
+      }
+    })
+    setHiddenColumns(newArray)
   }, [hiddenColumns])
 
   return (
