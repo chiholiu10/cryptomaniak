@@ -15,8 +15,6 @@ interface TableProps {
 }
 
 export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
-  console.log(hiddenColumns)
-  
   const {
     getTableProps,
     getTableBodyProps,
@@ -29,15 +27,15 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
     columns,
     initialState: {
       hiddenColumns: columns.filter(column => {
-        if(column.id !== String(hiddenColumns)) return column;
+        if (column.id !== String(hiddenColumns)) return column;
       })
     }
   });
-  
+
   useEffect(() => {
     let newArray: any = [];
     columns.slice(1).filter(column => {
-      if(column.id !== String(hiddenColumns) && (hiddenColumns.length > 0)) {
+      if (column.id !== String(hiddenColumns) && (hiddenColumns.length > 0)) {
         newArray.push(column.id);
       }
     })
