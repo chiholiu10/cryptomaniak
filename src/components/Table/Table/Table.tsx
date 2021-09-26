@@ -33,14 +33,16 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
     }
   });
 
+  let newArray: any = [];
+  columns.slice(1).filter(column => {
+    if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
+      newArray.push(column.id);
+    }
+  })
+
   useEffect(() => {
-    let newArray: any = [];
-    columns.slice(1).filter(column => {
-      if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
-        newArray.push(column.id);
-      }
-    })
-    console.log(newArray)
+
+
     setHiddenColumns(newArray)
   }, [hiddenColumnsOne, hiddenColumnsTwo])
 

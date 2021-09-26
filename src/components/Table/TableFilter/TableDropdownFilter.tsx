@@ -4,11 +4,15 @@ import { TableFilter, TableFilterBlock, TableFilterInput, TableFilterDropdown, T
 interface TableDropdownProps {
     columns: any;
     onSelect: any;
+    firstFilter?: string;
+    secondFilter?: string;
 }
 
 export const TableDropdownFilter: FC<TableDropdownProps> = ({
     columns,
-    onSelect
+    onSelect,
+    firstFilter,
+    secondFilter
 }) => {
     const [columnShow, setColumnShow] = useState<string>("");
     const [openDropdown, setOpenDropdown] = useState(false);
@@ -38,16 +42,18 @@ export const TableDropdownFilter: FC<TableDropdownProps> = ({
     }
 
     const toggleDropdownOpen = () => setOpenDropdown(!openDropdown);
-
+    console.log(firstFilter, secondFilter);
     return (
         <TableFilter>
             <TableFilterBlock ref={wrapperRef}>
                 <TableFilterInput onClick={() => toggleDropdownOpen()}>
                     {columnShow.length > 0 ? columnShow : "Select"}</TableFilterInput>
+                {typeof columnShow}
                 <TableFilterDropdown toggleDropdown={openDropdown}>
                     {columns.slice(1).map((item: any, index: number) => (
+
                         <TableDropdownList key={index}>
-                            <div onClick={(v) => dropdownFilter(item.id)}>
+                            <div onClick={() => dropdownFilter(item.id)}>
                                 {item.id}
                             </div>
                         </TableDropdownList>
