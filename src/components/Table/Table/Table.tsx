@@ -11,10 +11,11 @@ import { useTable } from "react-table";
 interface TableProps {
   columns: Array<any>;
   data: Array<any>;
-  hiddenColumns: any;
+  hiddenColumnsOne: any;
+  hiddenColumnsTwo: any;
 }
 
-export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
+export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenColumnsTwo }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -27,7 +28,7 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
     columns,
     initialState: {
       hiddenColumns: columns.filter(column => {
-        if (column.id !== String(hiddenColumns)) return column;
+        if (column.id !== String(hiddenColumnsOne)) return column;
       })
     }
   });
@@ -35,12 +36,13 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumns }) => {
   useEffect(() => {
     let newArray: any = [];
     columns.slice(1).filter(column => {
-      if (column.id !== String(hiddenColumns) && (hiddenColumns.length > 0)) {
+      if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
         newArray.push(column.id);
       }
     })
+    console.log(newArray)
     setHiddenColumns(newArray)
-  }, [hiddenColumns])
+  }, [hiddenColumnsOne, hiddenColumnsTwo])
 
   return (
     <>

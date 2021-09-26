@@ -47,7 +47,7 @@ export const TableDropdownFilter: FC<TableDropdownProps> = ({
                 <TableFilterDropdown toggleDropdown={openDropdown}>
                     {columns.slice(1).map((item: any, index: number) => (
                         <TableDropdownList key={index}>
-                            <div onClick={() => dropdownFilter(item.id)}>
+                            <div onClick={(v) => dropdownFilter(item.id)}>
                                 {item.id}
                             </div>
                         </TableDropdownList>

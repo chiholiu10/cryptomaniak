@@ -1,4 +1,5 @@
 import { FC, useMemo, useState } from "react";
+import { TableHeaders } from "../../../data/columns";
 import { TableContent } from "../../../data/table";
 import { Table } from "../Table/Table";
 import { TableDropdownFilter } from "../TableFilter/TableDropdownFilter";
@@ -9,20 +10,26 @@ interface TableComponentProps {
 }
 
 export const TableComponent: FC<TableComponentProps> = ({ columns }) => {
-    const [hiddenCol, setHiddenCol] = useState<string>("");
+    const [hiddenCol1, setHiddenCol1] = useState<string>("");
+    const [hiddenCol2, setHiddenCol2] = useState<string>("");
     const data = useMemo(() => TableContent, []);
 
     return (
         <div>
             <TableDropdownFilter
                 columns={columns}
-                onSelect={setHiddenCol}
+                onSelect={setHiddenCol1}
             />
             <TableDropdownFilter
                 columns={columns}
-                onSelect={setHiddenCol}
+                onSelect={setHiddenCol2}
             />
-            <Table columns={columns} data={data} hiddenColumns={hiddenCol} />
+            <Table
+                columns={columns}
+                data={data}
+                hiddenColumnsOne={hiddenCol1}
+                hiddenColumnsTwo={hiddenCol2}
+            />
         </div>
     )
 }
