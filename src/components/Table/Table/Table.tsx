@@ -1,18 +1,11 @@
 import { FC, useEffect } from "react";
 import { useTable } from "react-table";
 
-// interface Column {
-//   Header: string;
-//   accessor: string;
-//   id: Function | string | number;
-//   show: boolean;
-// }
-
 interface TableProps {
   columns: Array<any>;
   data: Array<any>;
-  hiddenColumnsOne: any;
-  hiddenColumnsTwo: any;
+  hiddenColumnsOne: string;
+  hiddenColumnsTwo: string;
 }
 
 export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenColumnsTwo }) => {

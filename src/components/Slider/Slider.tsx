@@ -24,7 +24,7 @@ export const SliderComponent: FC = () => {
         breakpoint: 1440,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           centerMode: true,
         },
       },
@@ -33,6 +33,7 @@ export const SliderComponent: FC = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
+          centerMode: true,
         },
       },
       {

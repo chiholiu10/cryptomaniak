@@ -19,10 +19,13 @@ export const TableComponent: FC<TableComponentProps> = ({ columns }) => {
             <TableDropdownFilter
                 columns={columns}
                 onSelect={setHiddenCol1}
+                filter={hiddenCol2}
             />
             <TableDropdownFilter
                 columns={columns}
                 onSelect={setHiddenCol2}
+
+                filter={hiddenCol1}
             />
             <Table
                 columns={columns}

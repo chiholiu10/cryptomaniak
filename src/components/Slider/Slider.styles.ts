@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { breakpoint } from "../../styles/BreakPoint";
 
 export const SliderCard = styled.div`
-    min-height: 250px;
+    min-height: 300px;
     border-radius: 30px;
     background: white;
     border: 1px solid black;
@@ -10,7 +10,7 @@ export const SliderCard = styled.div`
     padding: 15px;
     z-index: 1;
     ${breakpoint.md`
-        min-height: 300px;
+        min-height: 350px;
         padding: 25px;
     `}
     ${breakpoint.lg`
@@ -38,10 +38,10 @@ export const SliderContainer = styled.section`
             margin-left: 0.5%; 
         `}
         ${SliderCard} {
-
             ${breakpoint.lg`
                 transform: scale(1.2);
                 transition: all 0.2s ease-out;
+                border: 1px solid red;
             `}
         }
     }
