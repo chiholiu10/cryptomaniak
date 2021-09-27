@@ -118,7 +118,7 @@ export const TabContentBlock = styled.div`
   position: relative;
   @media (hover: hover) and (pointer: fine) {
     :hover {
-      ${breakpoint.md`
+      ${breakpoint.lg`
           transform: scale(1.1);
           transition: 0.1s;
         `}
