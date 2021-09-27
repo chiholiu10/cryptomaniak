@@ -12,6 +12,12 @@ export const Accordion = styled.section`
   ${breakpoint.md`
     padding-bottom: 150px;
   `}
+  h2 {
+    padding-bottom: 20px;
+    ${breakpoint.md`
+      padding-bottom: 40px;
+    `}
+  }
 `;
 
 export const AccordionCard = styled.div`
