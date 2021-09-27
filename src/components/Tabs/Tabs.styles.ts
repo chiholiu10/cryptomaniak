@@ -118,13 +118,16 @@ export const TabContentBlock = styled.div`
   position: relative;
   @media (hover: hover) and (pointer: fine) {
     :hover {
-      transform: scale(1.1);
-      transition: 0.1s;
-      ${TabButtonText} {
-        background: ${theme.colors.mediumBlue};
-        color: ${theme.colors.white};
-        border: 1px solid ${theme.colors.mediumBlue};
-      }
+      ${breakpoint.md`
+          transform: scale(1.1);
+          transition: 0.1s;
+        `}
+        ${TabButtonText} {
+          background: ${theme.colors.mediumBlue};
+          color: ${theme.colors.white};
+          border: 1px solid ${theme.colors.mediumBlue};
+        }
+
     }
   }
   h2 {
