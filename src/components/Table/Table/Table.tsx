@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import { useTable } from "react-table";
 import { TableThead, TableTr, TableContainer, TableTd, TableTbody, TableComponent } from "./Table.styles";
 
-interface TableProps {
+export interface TableProps {
   columns: Array<any>;
   data: Array<any>;
   hiddenColumnsOne: string;

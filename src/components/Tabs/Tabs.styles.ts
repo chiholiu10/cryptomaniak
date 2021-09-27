@@ -111,7 +111,7 @@ export const TabContentBlock = styled.div`
   min-height: 182px;
   max-width: 350px;
   border-radius: 25px;
-  padding: 20px 40px;
+  padding: 20px 25px;
   margin: 15px 0;
   display: flex;
   flex-direction: column;
