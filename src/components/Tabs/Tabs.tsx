@@ -35,7 +35,7 @@ export const Tabs: FC = () => {
     </TabBlock>));
 
   const allTabContent = Tab.map((item: TabTypes, index: number) => (
-    <TabContent id={item.tabMenu} checked={index === checkTab} >
+    <TabContent id={item.tabMenu} key={index} checked={index === checkTab} >
       {item.plans.map((plan: PlanTypes) => (
         <TabContentBlock key={plan.id}>
           <TabHeaderBlock>
