@@ -5,7 +5,6 @@ import { TableComponent } from "../Table/TableComponent/TableComponent";
 import { Header } from "../../styles/GeneralStyles.styles";
 import { Breakpoint, Subtitle } from "../Table/Table/Table.styles";
 
-
 export const TableData: FC = () => {
   const columns = useMemo(() => TableHeaders, []);
 

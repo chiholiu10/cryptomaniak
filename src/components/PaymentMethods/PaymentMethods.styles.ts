@@ -8,6 +8,13 @@ export const PaymentMethodsContainer = styled.section`
         margin-left: auto;
         margin-right: auto;
     `}
+    h2 {
+        padding-top: 30px;
+        ${breakpoint.md`
+            padding-top: 0;
+        `}
+
+    }
 `;
 
 export const PaymentBlock = styled.div`

@@ -46,8 +46,8 @@ export const Tabs: FC = () => {
             <TabText>
               {plan.subtitle && <TabSubtitle>{plan.subtitle}</TabSubtitle>}
               <TabContentToggleMobile>
-                {plan.list && <TabContentUl>{plan.list.map((item: any) => (
-                  <TabContentLi>{item}</TabContentLi>
+                {plan.list && <TabContentUl>{plan.list.map((item: string, index: number) => (
+                  <TabContentLi key={index}>{item}</TabContentLi>
                 ))}</TabContentUl>}
               </TabContentToggleMobile>
               <TabTextAction>{plan.priceAction}</TabTextAction>

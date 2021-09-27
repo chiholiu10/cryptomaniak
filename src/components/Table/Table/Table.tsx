@@ -53,7 +53,6 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
             return (
               <TableTr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-
                   <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" /> : cell.value === "false" ? <img src="/images/false.png" /> : cell.value}</TableTd>
                 ))}
               </TableTr>
