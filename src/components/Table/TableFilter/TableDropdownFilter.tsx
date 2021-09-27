@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react";
-import { TableFilter, TableFilterBlock, TableFilterInput, TableFilterDropdown, TableDropdownList } from "./TableDropdownFilter.styles";
+import { TableFilter, TableFilterBlock, TableFilterInput, TableFilterDropdown, TableDropdownList, TableDropdownOption, TableArrow } from "./TableDropdownFilter.styles";
 
 interface TableDropdownProps {
     columns: any;
@@ -13,8 +13,14 @@ export const TableDropdownFilter: FC<TableDropdownProps> = ({
     filter
 }) => {
     const [columnShow, setColumnShow] = useState<string>("");
-    const [openDropdown, setOpenDropdown] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState<boolean>(false);
     const wrapperRef = useRef(null);
+
+    type ColumnsType = {
+        Header: string;
+        id: string;
+        accessor: Function;
+    }
 
     const useOutsideAlerter = (ref: any) => {
         useEffect(() => {
@@ -44,16 +50,14 @@ export const TableDropdownFilter: FC<TableDropdownProps> = ({
     return (
         <TableFilter>
             <TableFilterBlock ref={wrapperRef}>
-                <TableFilterInput onClick={() => toggleDropdownOpen()}>
-                    {columnShow.length > 0 ? columnShow : "Select"}</TableFilterInput>
-                {typeof columnShow}
+                <TableFilterInput onClick={() => toggleDropdownOpen()} openDropdown={openDropdown}>
+                    {columnShow.length > 0 ? columnShow : "Select"}<TableArrow src="images/arrow-grey.png" alt="arrow-icon" /></TableFilterInput>
                 <TableFilterDropdown toggleDropdown={openDropdown}>
-                    {columns.slice(1).filter((item: any) => item.id !== filter).map((item: any, index: number) => (
-
+                    {columns.slice(1).filter((item: ColumnsType) => item.id !== filter).map((item: ColumnsType, index: number) => (
                         <TableDropdownList key={index}>
-                            <div onClick={() => dropdownFilter(item.id)}>
+                            <TableDropdownOption onClick={() => dropdownFilter(item.id)}>
                                 {item.id}
-                            </div>
+                            </TableDropdownOption>
                         </TableDropdownList>
                     ))}
                 </TableFilterDropdown>

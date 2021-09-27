@@ -1,5 +1,6 @@
 import { FC, useEffect } from "react";
 import { useTable } from "react-table";
+import { TableThead, TableTr, TableContainer, TableTd, TableTbody, TableComponent } from "./Table.styles";
 
 interface TableProps {
   columns: Array<any>;
@@ -18,54 +19,48 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
     setHiddenColumns
   } = useTable({
     data,
-    columns,
-    initialState: {
-      hiddenColumns: columns.filter(column => {
-        if (column.id !== String(hiddenColumnsOne)) return column;
-      })
-    }
+    columns
   });
 
-  let newArray: any = [];
+  let newArray: Array<string> = [];
   columns.slice(1).filter(column => {
     if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
-      newArray.push(column.id);
+      return newArray.push(column.id);
     }
   })
 
   useEffect(() => {
-
-
     setHiddenColumns(newArray)
   }, [hiddenColumnsOne, hiddenColumnsTwo])
 
   return (
-    <>
-      <table {...getTableProps()}>
-        <thead>
+    <TableComponent>
+      <TableContainer {...getTableProps()}>
+        <TableThead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <TableTr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
-            </tr>
+            </TableTr>
           ))}
-        </thead>
+        </TableThead>
 
-        <tbody {...getTableBodyProps()}>
+        <TableTbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row);
 
             return (
-              <tr {...row.getRowProps()}>
+              <TableTr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+
+                  <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" /> : cell.value === "false" ? <img src="/images/false.png" /> : cell.value}</TableTd>
                 ))}
-              </tr>
+              </TableTr>
             );
           })}
-        </tbody>
-      </table>
-    </>
+        </TableTbody>
+      </TableContainer>
+    </TableComponent>
   );
 };

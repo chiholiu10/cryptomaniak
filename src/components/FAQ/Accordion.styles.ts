@@ -8,7 +8,10 @@ export const Accordion = styled.section`
   max-width: 746px;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 0;
+  padding: 50px 10px;
+  ${breakpoint.md`
+    padding-bottom: 150px;
+  `}
 `;
 
 export const AccordionCard = styled.div`
@@ -24,8 +27,10 @@ export const AccordionLabel = styled.div<LabelProps>`
   display: inline-flex;
   flex-wrap: nowrap;
   width: 100%;
-  :hover {
-    cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -38,6 +43,7 @@ export const AccordionBlock = styled.div`
 export const AccordionBackground = styled.div`
   background-color: transparent;
 `;
+
 export const AccordionBackgroundDefault = styled.div`
 `;
 
@@ -52,12 +58,11 @@ export const Block = `
 
 export const None = `
   display: none;
-  // opacity: 0;
   height: 0;
   z-index: -10;
 `;
 
-export const AccordionContent = styled.div<{toggle: boolean}>`
+export const AccordionContent = styled.div<{ toggle: boolean }>`
   display: flex;
   height: auto;
   overflow: hidden;
@@ -66,7 +71,7 @@ export const AccordionContent = styled.div<{toggle: boolean}>`
   font-size: 18px;
   line-height: 25px;
   color: ${theme.colors.lightText};
-  display: ${(p: any) => p.toggle ? Block: None};
+  display: ${(p) => p.toggle ? Block : None};
 `;
 
 export const AccordionTextBlock = styled.div`
@@ -90,7 +95,7 @@ export const AccordionIcon = styled.img`
 `;
 
 
-export const AccordionArrow = styled.span<{toggle: boolean}>`
+export const AccordionArrow = styled.span<{ toggle: boolean }>`
   display: flex;
   align-items: start;
   justify-content: flex-end;
@@ -99,7 +104,7 @@ export const AccordionArrow = styled.span<{toggle: boolean}>`
   width: 50px;
   ${AccordionIcon} {
     transition: 0.5s;
-    transform: ${(p: any) => p.toggle ? "rotate(180deg)" : "rotate(0deg)"}; 
+    transform: ${(p) => p.toggle ? "rotate(180deg)" : "rotate(0deg)"}; 
   }
 `;
 

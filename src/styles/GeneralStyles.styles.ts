@@ -7,8 +7,12 @@ export const Header = styled.h2`
     font-style: normal;
     font-size: 32px;
     line-height: 38px;
-    padding: 30px 0 20px;
+    padding: 30px 0 10px;
     ${breakpoint.md`
         padding: 100px 0 45px;
     `}
+`;
+
+export const MaxWidthDesktop = `
+    max-width: 1100px;
 `;

@@ -11,8 +11,9 @@ export const App: FC = () => {
   return (
     <AppComponent>
       <Tabs />
-      <SliderComponent />
       <TableData />
+      <SliderComponent />
+
       <PaymentMethods />
       <AccordionComponent />
       <ComingSoon />

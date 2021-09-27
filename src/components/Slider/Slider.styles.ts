@@ -1,20 +1,22 @@
 import styled from "styled-components";
 import { breakpoint } from "../../styles/BreakPoint";
+import theme from "../../styles/Theme";
 
 export const SliderCard = styled.div`
     min-height: 300px;
     border-radius: 30px;
     background: white;
-    border: 1px solid black;
+    overflow: hidden;
     position: relative;
     padding: 15px;
     z-index: 1;
+    box-shadow: 0px 10.5106px 33.634px rgba(5, 85, 95, 0.06), 0px 8.40851px 25.2255px rgba(5, 85, 95, 0.04);
     ${breakpoint.md`
         min-height: 350px;
         padding: 25px;
     `}
     ${breakpoint.lg`
-        min-height: 320px;
+        min-height: 300px;
     `}
     img {
         position: absolute;
@@ -24,9 +26,24 @@ export const SliderCard = styled.div`
     }
 `;
 
+export const BreakpointMobile = styled.br`
+    display: block;
+    ${breakpoint.md`
+        display: none;
+    `}
+`;
+export const BreakpointTablet = styled.br`
+    display: none;
+    ${breakpoint.md`
+        display: block;
+    `}
+`;
+
 export const SliderContainer = styled.section`
-    height: 400px;
-    padding-top: 50px;
+    ${breakpoint.md`
+        padding-top: 50px; 
+        padding-bottom: 20px;   
+    `}
     .slick-active.slick-slide-current {
         z-index: 100;
         width: 130px;
@@ -41,7 +58,6 @@ export const SliderContainer = styled.section`
             ${breakpoint.lg`
                 transform: scale(1.2);
                 transition: all 0.2s ease-out;
-                border: 1px solid red;
             `}
         }
     }
@@ -66,6 +82,7 @@ export const SliderCardName = styled.p`
 
 export const SliderCardContent = styled.p`
     padding: 12px 0 10px;
+    color: ${theme.colors.darkText};
 `;
 
 export const SliderCardImage = styled.img`

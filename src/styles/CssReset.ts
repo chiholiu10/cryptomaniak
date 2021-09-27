@@ -9,7 +9,7 @@ export const CSSreset = createGlobalStyle(
     }
     body {
       margin: 0;
-      width: 100vw;
+      width: 100%;
       overflow-x: hidden;
       font-family: ${theme.fonts.body};
       color: ${theme.colors.black};

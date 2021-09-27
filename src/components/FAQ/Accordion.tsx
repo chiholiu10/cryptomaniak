@@ -36,7 +36,7 @@ export const AccordionComponent: FC = () => {
             >
               <AccordionTabText>{title}</AccordionTabText>
               <AccordionArrow toggle={isOpen === index}>
-                <AccordionIcon src="images/arrow.png" />
+                <AccordionIcon src="images/arrow.png" alt="arrow-icon" />
               </AccordionArrow>
             </AccordionLabel>
             <AccordionContent toggle={isOpen === index}>

@@ -11,8 +11,14 @@ import {
   ComingSoonTextBlock,
   CompongSoonInnerContainer,
   EllipseImage,
+  EllipseTextImageMobile,
+  EllipseTextImageTablet,
   HeaderBreak,
+  ImageEllipse,
   IphoneImage,
+  MobileImage,
+  TabletImage,
+  TabletWatchImage,
 } from "./ComingSoon.styles";
 
 export const ComingSoon: FC = () => (
@@ -28,7 +34,7 @@ export const ComingSoon: FC = () => (
         </ComingSoonSubtitle>
         <ComingSoonTextBlock>
           <ComingSoonSpan>
-            <ComingSoonArrowIcon src="images/arrow_btn.png" alt="arrow-icon"/>
+            <ComingSoonArrowIcon src="images/arrow-btn.png" alt="arrow-icon" />
           </ComingSoonSpan>
           <ComingSoonText>Let's get started</ComingSoonText>
         </ComingSoonTextBlock>
@@ -36,10 +42,16 @@ export const ComingSoon: FC = () => (
       <ComingSoonColumn>
         <ComingSoonImageBlock>
           <EllipseImage>
-            <img src="images/ellipse.png" alt="ellipse"/>
+            <ImageEllipse>
+              <EllipseTextImageMobile src="images/coming-soon-text-mobile.png" />
+              <EllipseTextImageTablet src="images/coming-soon-text-tablet.png" />
+            </ImageEllipse>
           </EllipseImage>
           <IphoneImage>
-            <img src="images/iphone_app.png" alt="iphone-app"/>
+            <MobileImage src="images/iphone-app.png" alt="iphone-app" />
+            <TabletImage src="images/iphone-app-tablet.png" alt="iphone-app" />
+
+            <TabletWatchImage src="images/apple-watch.png" alt="apple-watch" />
           </IphoneImage>
         </ComingSoonImageBlock>
       </ComingSoonColumn>

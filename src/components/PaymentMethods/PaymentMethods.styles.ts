@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { breakpoint } from "../../styles/BreakPoint";
+import { MaxWidthDesktop } from "../../styles/GeneralStyles.styles";
 
 export const PaymentMethodsContainer = styled.section`
+    ${breakpoint.lg`
+        ${MaxWidthDesktop};
+        margin-left: auto;
+        margin-right: auto;
+    `}
 `;
 
 export const PaymentBlock = styled.div`
     padding: 20px 0;
-    ${breakpoint.xl`
-        max-width: 1300px;
-        margin-left: auto;
-        margin-right: auto;
-    `}
 `;
 
 export const PaymentIconBlock = styled.div`
@@ -26,7 +27,7 @@ export const PaymentIconBlock = styled.div`
         flex: 0 32%;
     `}
     ${breakpoint.lg`
-      flex: 0 0 200px;
+        flex: 0 0 16%;
     `}
 `;
 

@@ -7,7 +7,7 @@ export const Tab = [
             id: 1,
             title: "Hero",
             subtitle: "$83.25/month",
-            list: null,
+            list: ["500 positions", "portfolio management", "manual trading", "all coins for signals", "market arbitrage", "algorithm intelligence"],
             buttonText: "Get started",
             priceAction: null,
             actionTitle: "Best Value"

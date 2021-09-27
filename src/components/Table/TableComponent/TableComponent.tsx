@@ -1,9 +1,8 @@
 import { FC, useMemo, useState } from "react";
-import { TableHeaders } from "../../../data/columns";
 import { TableContent } from "../../../data/table";
 import { Table } from "../Table/Table";
 import { TableDropdownFilter } from "../TableFilter/TableDropdownFilter";
-// import { TableFilter, TableFilterBlock, TableFilterInput, TableFilterDropdown, TableDropdownList } from "./TableComponent.styles";
+import { TableDropdownComponent, TableDropdownText } from "./TableComponent.styles";
 
 interface TableComponentProps {
     columns: Array<any>;
@@ -16,17 +15,19 @@ export const TableComponent: FC<TableComponentProps> = ({ columns }) => {
 
     return (
         <div>
-            <TableDropdownFilter
-                columns={columns}
-                onSelect={setHiddenCol1}
-                filter={hiddenCol2}
-            />
-            <TableDropdownFilter
-                columns={columns}
-                onSelect={setHiddenCol2}
-
-                filter={hiddenCol1}
-            />
+            <TableDropdownComponent>
+                <TableDropdownFilter
+                    columns={columns}
+                    onSelect={setHiddenCol1}
+                    filter={hiddenCol2}
+                />
+                <TableDropdownText>to</TableDropdownText>
+                <TableDropdownFilter
+                    columns={columns}
+                    onSelect={setHiddenCol2}
+                    filter={hiddenCol1}
+                />
+            </TableDropdownComponent>
             <Table
                 columns={columns}
                 data={data}
