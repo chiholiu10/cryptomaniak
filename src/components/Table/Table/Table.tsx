@@ -23,6 +23,7 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
   });
 
   let newArray: Array<string> = [];
+  // eslint-disable-next-line
   columns.slice(1).filter(column => {
     if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
       return newArray.push(column.id);
@@ -31,7 +32,8 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
 
   useEffect(() => {
     setHiddenColumns(newArray)
-  }, [hiddenColumnsOne, hiddenColumnsTwo])
+    // eslint-disable-next-line
+  }, [setHiddenColumns])
 
   return (
     <TableComponent>
@@ -53,7 +55,7 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
             return (
               <TableTr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" /> : cell.value === "false" ? <img src="/images/false.png" /> : cell.value}</TableTd>
+                  <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" alt="true-icon" /> : cell.value === "false" ? <img src="/images/false.png" alt="false-icon" /> : cell.value}</TableTd>
                 ))}
               </TableTr>
             );
