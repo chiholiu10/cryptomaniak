@@ -23,11 +23,11 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
   });
 
   let newArray: Array<string> = [];
-  // eslint-disable-next-line
   columns.slice(1).filter(column => {
     if (column.id !== String(hiddenColumnsOne) && (hiddenColumnsOne.length > 0 && hiddenColumnsTwo) && (column.id !== String(hiddenColumnsTwo))) {
       return newArray.push(column.id);
     }
+    return newArray;
   })
 
   useEffect(() => {
