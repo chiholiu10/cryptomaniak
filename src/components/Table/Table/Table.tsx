@@ -31,9 +31,9 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
   })
 
   useEffect(() => {
-    setHiddenColumns(newArray)
-    // eslint-disable-next-line
-  }, [setHiddenColumns])
+    setHiddenColumns(newArray);
+    // eslint-disable-next-line 
+  }, [hiddenColumnsOne, hiddenColumnsTwo])
 
   return (
     <TableComponent>
@@ -55,7 +55,7 @@ export const Table: FC<TableProps> = ({ columns, data, hiddenColumnsOne, hiddenC
             return (
               <TableTr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" alt="true-icon" /> : cell.value === "false" ? <img src="/images/false.png" alt="false-icon" /> : cell.value}</TableTd>
+                  <TableTd {...cell.getCellProps()}>{cell.value === "true" ? <img src="/images/true.png" alt="true-icon" /> : cell.value === "false" ? <img src="/images/false.png" alt="true-icon" /> : cell.value}</TableTd>
                 ))}
               </TableTr>
             );
