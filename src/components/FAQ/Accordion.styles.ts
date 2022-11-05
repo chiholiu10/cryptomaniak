@@ -53,22 +53,15 @@ export const AccordionBackground = styled.div`
 export const AccordionBackgroundDefault = styled.div`
 `;
 
-export const Block = `
-  display: block;
-  opacity: 1;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  padding: 10px 0;
+export const OpenAccordion = `
+  100px;
 `;
 
-export const None = `
-  display: none;
-  height: 0;
-  z-index: -10;
+export const CloseAccordion = `
+  0px;
 `;
 
-export const AccordionContent = styled.div<{ toggle: boolean }>`
+export const AccordionContent = styled.div<{ toggle: boolean; }>`
   display: flex;
   height: auto;
   overflow: hidden;
@@ -77,7 +70,8 @@ export const AccordionContent = styled.div<{ toggle: boolean }>`
   font-size: 18px;
   line-height: 25px;
   color: ${theme.colors.lightText};
-  display: ${(p) => p.toggle ? Block : None};
+  transition: all 0.5s ease-out;
+  height: ${(p) => p.toggle ? OpenAccordion : CloseAccordion}; 
 `;
 
 export const AccordionTextBlock = styled.div`
@@ -101,7 +95,7 @@ export const AccordionIcon = styled.img`
 `;
 
 
-export const AccordionArrow = styled.span<{ toggle: boolean }>`
+export const AccordionArrow = styled.span<{ toggle: boolean; }>`
   display: flex;
   align-items: start;
   justify-content: flex-end;

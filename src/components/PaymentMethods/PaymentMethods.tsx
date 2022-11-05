@@ -18,6 +18,7 @@ export const PaymentMethods: FC = () => {
       <img src={icons.image} alt={icons.image} />
     </PaymentIconBlock>
   ));
+
   return (
     <PaymentMethodsContainer>
       <Header>Payment method</Header>

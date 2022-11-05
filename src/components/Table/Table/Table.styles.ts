@@ -79,7 +79,7 @@ export const TableTd = styled.td`
     width: 200px;
   }
   &:nth-child(1) {  
-    width: 450px;
+    max-width: 450px;
   }
 `;
 

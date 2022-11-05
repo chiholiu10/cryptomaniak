@@ -116,10 +116,11 @@ export const TabContentBlock = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  border: 2px solid ${theme.colors.white};
   @media (hover: hover) and (pointer: fine) {
     :hover {
       ${breakpoint.lg`
-          transform: scale(1.1);
+          background-color: ${theme.colors.lightGrey};
           transition: 0.1s;
         `}
         ${TabButtonText} {
@@ -258,8 +259,9 @@ export const TabText = styled.div`
     flex-direction: column;
     padding-bottom: 50px;
     ${TabTextAction} {
-      position: absolute;
+      position: relative;
       bottom: -10px;
+      justify-content: flex-start;
     }
   `}  
 `;
